@@ -4,7 +4,35 @@
     box-sizing: border-box;
 }
 .main{
-    margin-top: 70px;
-    padding:20px;
+    margin:10px auto;
+    padding: 30px 90px;
+    width:60%;
     border:2px solid black;
+    
+
+}
+.input{
+    margin-top: 20px;
+    width:60%;
+    height:50px;
+    border:2px solid black;
+    border-radius: 10px;
+    padding:0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 110px;
+    position: relative;
+}
+.textarea{
+    display: flex;
+    flex-direction: column;  
+}
+button{
+    position: absolute;
+    bottom: 454px;
+    left:740px;
+    background-color: black;
+    color:aliceblue;
+    padding:5px;
 }

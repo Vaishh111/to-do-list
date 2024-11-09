@@ -5,11 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="main">
+        
+        <div class="textarea">
         <h1>Task Tracker</h1>
         
+        <div>
+            <input id="inp" type="text" placeholder="start writing and press enter to create task" class="input">
+            <button onclick="clickMe()"><i class="fa-solid fa-arrow-left"></i></button>
+    
+     
+        </div>
+        <ul id="mylist">
+        </ul>
+        </div>
     </div>
+    <script>
+        let inp = document.getElementById('inp')
+        let mylist = document.getElementById('mylist')
+      let  task = []
+
+        function clickMe (){
+
+            task.push(inp.value)
+         localStorage.setItem('task',JSON.stringify(task))
+
+        inp.value = ''
+
+        renderData()
+        }
+
+        // const clickMe = () => { 
+
+        // }
+
+        function renderData(){
+
+            let values = localStorage.getItem('task')
+            
+                     
+            let obj = JSON.parse(values)
+    
+            console.log(obj.length)
+            
+            for(let i = 0; i <= obj.length-1; i++){
+
+            console.log(obj[i])
+            let listItem = document.createElement('li');
+            
+            listItem.textContent = obj[i]; 
+
+            mylist.appendChild(listItem);
+            }
+        }
+
+        renderData()
+
+    </script>
 </body>
 </html>
