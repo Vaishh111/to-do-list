@@ -26,21 +26,20 @@
     <script>
         let inp = document.getElementById('inp')
         let mylist = document.getElementById('mylist')
-      let  task = []
+        let  task = []
 
         function clickMe (){
 
             task.push(inp.value)
          localStorage.setItem('task',JSON.stringify(task))
+         
 
         inp.value = ''
 
         renderData()
         }
 
-        // const clickMe = () => { 
-
-        // }
+      
 
         function renderData(){
 
@@ -51,13 +50,13 @@
     
             console.log(obj.length)
             
-            for(let i = 0; i <= obj.length-1; i++){
+            for(let i = 0; i <= obj.length-1; i++){  
 
             console.log(obj[i])
             let listItem = document.createElement('li');
             
             listItem.textContent = obj[i]; 
-            //    `<l1>${}`
+            
             mylist.appendChild(listItem);
             }
         }
