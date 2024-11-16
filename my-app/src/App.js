@@ -7,8 +7,8 @@ function App() {
   return (
    <>
     <Navbar />
-    <Maincomp text="text 1" rot={false}/>
-    <Maincomp text="text 2" rot={true}/>
+    <Maincomp text="text 1" rot={true}/>
+ 
 
 
 
